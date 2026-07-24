@@ -49,30 +49,6 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* View mode toggle */}
-        <div className="hidden md:flex items-center bg-slate-900/90 p-1 rounded-xl border border-slate-800">
-          <button
-            onClick={() => setActiveTab('interactive')}
-            className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              activeTab === 'interactive'
-                ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-950'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            العرض التفاعلي
-          </button>
-          <button
-            onClick={() => setActiveTab('pdf-preview')}
-            className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              activeTab === 'pdf-preview'
-                ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-950'
-                : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            معاينة صفحات PDF
-          </button>
-        </div>
-
         {/* Progress & Actions */}
         <div className="flex items-center gap-3">
           
@@ -101,24 +77,6 @@ export const Header: React.FC<HeaderProps> = ({
             <MessageCircle className="w-4 h-4 text-emerald-400" />
             <span>تواصل معنا</span>
           </a>
-
-          {/* Quick Print Button */}
-          <button
-            onClick={onPrint}
-            className="p-2.5 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white rounded-xl border border-slate-800 transition-all cursor-pointer"
-            title="طباعة أو حفظ مباشر عبر المتصفح"
-          >
-            <Printer className="w-4 h-4" />
-          </button>
-
-          {/* Download PDF Modal Trigger Button */}
-          <button
-            onClick={onOpenPdfModal}
-            className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white rounded-xl text-xs sm:text-sm font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all cursor-pointer group"
-          >
-            <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-            <span>تحميل PDF فاخر</span>
-          </button>
         </div>
 
       </div>
